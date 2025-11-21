@@ -1,0 +1,12 @@
+#!/usr/bin/expect
+set timeout 2
+spawn /opt/mssql/bin/mssql-conf setup
+expect "This is a preview version (free, no production use rights, 180-day limit starting now), continue>
+send "Yes\r"
+expect "Enter the SQL Server system administrator password:\r"
+send -- "P_ssw0rd\r"
+expect "Confirm the SQL Server system administrator password: \r"
+send -- "P_ssw0rd\r"
+set timeout -1
+expect eof 
+exit 0
