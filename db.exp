@@ -3,6 +3,8 @@ set timeout 2
 spawn /opt/mssql/bin/mssql-conf setup
 expect "This is a preview version (free, no production use rights, 180-day limit starting now), continue? \[Yes/No\]:\r"
 send "Yes\r"
+expect "Do you accept the license terms? \[Yes/No\]:\r"
+send "Yes\r"
 expect "Enter the SQL Server system administrator password:\r"
 send -- "P_ssw0rd\r"
 expect "Confirm the SQL Server system administrator password: \r"
